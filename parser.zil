@@ -110,7 +110,7 @@ with 'P-'. Local variables are not restricted in any way."
    all required orphaning, syntax checking, and noun clause lookup."   
 
 <ROUTINE PARSER ("AUX" (PTR ,P-LEXSTART) WRD (VAL 0) (VERB <>) (DONT <>)
-		       LEN (DIR <>) (NW 0) (LW 0) NUM SCNT (CNT -1)) 
+		       LEN (DIR <>) (NW 0) (LW 0) NUM (CNT -1)) 
 	<REPEAT ()
 		<COND (<G? <SET CNT <+ .CNT 1>> ,P-ITBLLEN> <RETURN>)
 		      (T <PUT ,P-ITBL .CNT 0>)>>
@@ -852,7 +852,7 @@ with 'P-'. Local variables are not restricted in any way."
 			    (T <SETG P-PRSI <BUT-MERGE ,P-PRSI>>)>)>)>
 	<RTRUE>>  
 
-<ROUTINE BUT-MERGE (TBL "AUX" LEN BUTLEN (CNT 1) (MATCHES 0) OBJ NTBL)
+<ROUTINE BUT-MERGE (TBL "AUX" LEN (CNT 1) (MATCHES 0) OBJ NTBL)
 	<SET LEN <GET .TBL ,P-MATCHLEN>>
 	<PUT ,P-MERGE ,P-MATCHLEN 0>
 	<REPEAT ()
@@ -898,7 +898,7 @@ with 'P-'. Local variables are not restricted in any way."
 <GLOBAL P-CSPTR <>>
 <GLOBAL P-CEPTR <>>
 
-<ROUTINE SNARFEM (PTR EPTR TBL "AUX" (BUT <>) LEN WV WRD NW (WAS-ALL <>))
+<ROUTINE SNARFEM (PTR EPTR TBL "AUX" (BUT <>) WV WRD NW (WAS-ALL <>))
    <SETG P-AND <>>
    <COND (<==? ,P-GETFLAGS ,P-ALL>
 	  <SET WAS-ALL T>)>
@@ -989,7 +989,7 @@ with 'P-'. Local variables are not restricted in any way."
 <GLOBAL NOUN-MISSING "There seems to be a noun missing in that sentence.">
 
 <ROUTINE GET-OBJECT (TBL "OPTIONAL" (VRB T)
-		        "AUX" GEN BITS LEN XBITS TLEN (GCHECK <>) (OLEN 0) OBJ)
+		        "AUX" GEN LEN XBITS TLEN (GCHECK <>) (OLEN 0))
 	 <SET XBITS ,P-SLOCBITS>
 	 <SET TLEN <GET .TBL ,P-MATCHLEN>>
 	 <COND (<BTST ,P-GETFLAGS ,P-INHIBIT> <RTRUE>)>
@@ -1193,7 +1193,7 @@ with 'P-'. Local variables are not restricted in any way."
 			   <EQUAL? ,PRSA ,V?LOOK-INSIDE ,V?SEARCH ,V?EXAMINE>>
 		      <DO-SL ,ROOMS 1 1>)>)>>
  
-<ROUTINE DO-SL (OBJ BIT1 BIT2 "AUX" BTS)
+<ROUTINE DO-SL (OBJ BIT1 BIT2 "AUX")
 	<COND (<BTST ,P-SLOCBITS <+ .BIT1 .BIT2>>
 	       <SEARCH-LIST .OBJ ,P-TABLE ,P-SRCALL>)
 	      (T

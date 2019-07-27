@@ -202,7 +202,7 @@ no recollection of eating ">
 	(FLAGS ACTORBIT)
 	(ACTION BEAST-F)>
 
-<ROUTINE BEAST-DESCFCN ("OPTIONAL" X)
+<ROUTINE BEAST-DESCFCN ()
 	 <COND (<FSET? ,BEAST ,MUNGEDBIT>
 		<TELL
 "The Beast is in the corner, sleeping peacefully (Footnote 5)." CR>)
@@ -545,7 +545,7 @@ battle cruiser. ">
 	(FLAGS ACTORBIT)
 	(ACTION VLHURG-F)>
 
-<ROUTINE VLHURG-DESCFCN ("OPTIONAL" X)
+<ROUTINE VLHURG-DESCFCN ()
 	 <TELL CR
 "Standing near you are two creatures who are gazing at the star system with
 terrible hatred in their eyes. One is wearing" ,BATTLE-SHORTS "and the other

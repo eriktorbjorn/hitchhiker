@@ -767,7 +767,7 @@ you." CR>)>>
 	(FLAGS NARTICLEBIT ACTORBIT CONTBIT OPENBIT)
 	(ACTION PROSSER-F)>
 
-<ROUTINE PROSSER-DESCFCN ("OPTIONAL" X)
+<ROUTINE PROSSER-DESCFCN ()
 	 <COND (<AND <EQUAL? ,IDENTITY-FLAG ,FORD>
 		     <NOT <FSET? ,PROSSER ,TOUCHBIT>>>
 		<FSET ,PROSSER ,TOUCHBIT>
@@ -984,7 +984,7 @@ wearing it only because I think " D ,DIGITAL-WATCH "es are neat.\"" CR>)>>
 	(FLAGS ACTORBIT CONTBIT SEARCHBIT OPENBIT NARTICLEBIT)
 	(ACTION FORD-F)>
 
-<ROUTINE FORD-DESCFCN ("OPTIONAL" X)
+<ROUTINE FORD-DESCFCN ()
 	 <COND (,FORD-SLEEPING
 		<TELL "Ford is in the corner, snoring loudly." CR>)
 	       (T
@@ -1300,7 +1300,7 @@ Reluctantly, Prosser steps forward and lies down in front of the " D ,BULLDOZER
 	(SIZE 20)
 	(ACTION SATCHEL-F)>
 
-<ROUTINE SATCHEL-DESCFCN ("OPTIONAL" X)
+<ROUTINE SATCHEL-DESCFCN ()
 	 <TELL "There is a satchel here">
 	 <COND (<EQUAL? ,PANEL-BLOCKER ,SATCHEL>
 		<TELL ", resting in front of the " D ,ROBOT-PANEL>)>

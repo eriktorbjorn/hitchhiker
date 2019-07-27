@@ -408,7 +408,7 @@ in being a computer." CR>)>>
 	       (<PRSO? <LOC ,PROTAGONIST>>
 		<TELL ,LOOK-AROUND CR>)>>
 
-<ROUTINE V-BOARD ("AUX" AV)
+<ROUTINE V-BOARD ()
 	 <COND (<FSET? ,PRSO ,VEHBIT>
 		<TELL "You are now in">
 		<ARTICLE ,PRSO T>
@@ -596,7 +596,7 @@ object, LOOK INSIDE it, LOOK UNDER it, etc." CR>>
 	 <TELL "You doze for several minutes. ">
 	 <V-WAIT>>
 
-<ROUTINE V-DRINK ("AUX" S)
+<ROUTINE V-DRINK ()
 	 <TELL "You can't drink that!" CR>>
 
 <ROUTINE V-DRINK-FROM ()
@@ -1216,7 +1216,7 @@ to spray you with his Sub-Ethon exhaust." CR>)
 	       (T
 		<TELL "You sound rather negative." CR>)>>
 
-<ROUTINE V-OPEN ("AUX" F STR)
+<ROUTINE V-OPEN ()
 	 <COND (<FSET? ,PRSO ,SURFACEBIT>
 		<V-COUNT>)
 	       (<AND <FSET? ,PRSO ,ACTORBIT>
@@ -1602,7 +1602,7 @@ anything remotely like it." CR>)>)
 	 <PERFORM ,V?GIVE ,PRSI ,PRSO>
 	 <RTRUE>>
 
-<ROUTINE V-SHAKE ("AUX" X)
+<ROUTINE V-SHAKE ()
 	 <COND (<FSET? ,PRSO ,ACTORBIT>
 		<TELL "Be real." CR>)
 	       (T
@@ -1950,7 +1950,7 @@ interesting wall." CR>)
 	       (T
 		<V-CARVE>)>>
 
-<ROUTINE V-THROUGH ("AUX" M)
+<ROUTINE V-THROUGH ()
 	<COND (<FSET? ,PRSO ,DOORBIT>
 	       <DO-WALK <OTHER-SIDE ,PRSO>>
 	       <RTRUE>)
@@ -2285,7 +2285,7 @@ walking, all that comes to mind is an image of">
 
 ;"subtitle object manipulation"
 
-<ROUTINE ITAKE ("OPTIONAL" (VB T) "AUX" CNT OBJ)
+<ROUTINE ITAKE ("OPTIONAL" (VB T) "AUX" CNT)
 	 <COND (<FSET? ,PRSO ,INTEGRALBIT>
 		<COND (.VB
 		       <PART-OF>)>

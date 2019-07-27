@@ -125,7 +125,7 @@
 		<TELL " here!\"" CR>)>
 	 <FUCKING-CLEAR>>
 
-<ROUTINE FIND-NOT-HERE (TBL PRSO? "AUX" M-F OBJ)
+<ROUTINE FIND-NOT-HERE (TBL PRSO? "AUX" M-F)
 ;"Special-case code goes here. <MOBY-FIND .TBL> returns # of matches. If 1,
 then P-MOBY-FOUND is it. You can treat the 0 and >1 cases alike or differently.
 Always return RFALSE (not handled) if you have resolved the problem."
@@ -474,7 +474,7 @@ varying sizes. The " D ,THIRD-PLANET " catches your attention.">
 	(FLAGS ACTORBIT TOUCHBIT NARTICLEBIT)
 	(ACTION ME-F)>
 
-<ROUTINE ME-F ("AUX" OLIT) 
+<ROUTINE ME-F ()
 	 <COND (<VERB? TELL>
 		<TELL
 "Talking to yourself is a sign of impending mental collapse." CR>
@@ -1364,7 +1364,7 @@ There is no causal relationship between these two events.">
 	(FLAGS NARTICLEBIT TAKEBIT TRYTAKEBIT DRINKBIT)
 	(ACTION TEA-F)>
 
-<ROUTINE TEA-DESCFCN ("OPTIONAL" X)
+<ROUTINE TEA-DESCFCN ()
 	 <DESCRIBE-DRINK ,TEA>>
 
 <ROUTINE DESCRIBE-DRINK (DRINK)
@@ -1749,7 +1749,7 @@ D ,ENGINEER " and" ,ROARS-OFF "." CR>)>>
 	(TEXT "Try: CONSULT GUIDE ABOUT (something).")
 	(ACTION GUIDE-F)>
 
-<ROUTINE GUIDE-DESCFCN ("OPTIONAL" X)
+<ROUTINE GUIDE-DESCFCN ()
 	 <TELL "There is a copy of " ,GUIDE-NAME " here." CR>>
 
 <ROUTINE GUIDE-F ()
